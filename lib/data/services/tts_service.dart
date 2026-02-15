@@ -31,7 +31,7 @@ class TTSService {
       // 3. Loglarni tinglash
       _serverProcess!.stdout.transform(utf8.decoder).listen((data) {
         print("data: $data");
-        if (data.contains("Model tayyor")) {
+        if (data.contains("DONE")) {
           textEntry.setServerStatus(true);
           settings.updateServerStatus("loaded");
         }
